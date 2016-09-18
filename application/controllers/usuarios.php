@@ -3,6 +3,9 @@
 class Usuarios extends CI_Controller {
 
     public function novo() {
+        // Exibe informações que auxiliam no debugging.
+        $this->output->enable_profiler(TRUE);
+
         // Recebe os dados que vieram no POST.
         $usuario = array(
             "nome" => $this->input->post("nome"),
@@ -10,8 +13,6 @@ class Usuarios extends CI_Controller {
             // Criptografa a senha.
             "senha" => md5($this->input->post("senha"))
         );
-
-        $this->load->database();
 
         $this->load->model("usuarios_model");
 
