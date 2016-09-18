@@ -17,6 +17,7 @@ class Produtos extends CI_Controller {
         // Carrega os ajudantes.
         $this->load->helper("url");
         $this->load->helper("currency");
+        $this->load->helper("form");
 
         $this->load->view("produtos/index.php", $dados);
     }
