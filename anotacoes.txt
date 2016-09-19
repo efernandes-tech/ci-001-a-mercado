@@ -2,3 +2,5 @@
     <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 2 - Exibe informações que auxiliam no debugging da aplicação.
     $this->output->enable_profiler(TRUE);
+3 - Para usar a sessão é preciso configurar a chave de criptografia em "config.php".
+    $config['encryption_key'] = 'AquiVaiQualquerCoisaj3kljfj43jf4j3k4f';
