@@ -1,9 +1,12 @@
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="<?= base_url("css/bootstrap.css") ?>">
 </head>
 <body>
     <div class="container">
+        <p class="alert-success"><?= $this->session->flashdata("success") ?></p>
+        <p class="alert-danger"><?= $this->session->flashdata("danger") ?></p>
         <h1>Produtos</h1>
         <table class="table">
             <?php foreach($produtos as $produto) : ?>
@@ -13,7 +16,9 @@
                 </tr>
             <?php endforeach; ?>
         </table>
-        <?php if(!$this->session->userdata("usuario_logado")) : ?>
+        <?php if ($this->session->userdata("usuario_logado")) : ?>
+            <?= anchor('login/logout','Logout', array("class" => "btn btn-primary"))?>
+        <?php else : ?>
             <h1>Login</h1>
             <?php
             echo form_open("login/autenticar");

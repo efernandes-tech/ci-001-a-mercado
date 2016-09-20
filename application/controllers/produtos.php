@@ -4,7 +4,7 @@ class Produtos extends CI_Controller {
 
     public function index() {
         // Exibe informações que auxiliam no debugging.
-        $this->output->enable_profiler(TRUE);
+        // $this->output->enable_profiler(TRUE);
 
         // Carrega o modelo de dados.
         $this->load->model("produtos_model");
@@ -14,8 +14,8 @@ class Produtos extends CI_Controller {
 
         $dados = array("produtos" => $produtos);
 
-        // Carrega os ajudantes.
-        $this->load->helper(array("url", "currency", "form"));
+        // Carrega os ajudantes para este controller.
+        $this->load->helper(array("currency", "form"));
 
         $this->load->view("produtos/index.php", $dados);
     }

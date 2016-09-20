@@ -4,7 +4,7 @@ class Usuarios extends CI_Controller {
 
     public function novo() {
         // Exibe informações que auxiliam no debugging.
-        $this->output->enable_profiler(TRUE);
+        // $this->output->enable_profiler(TRUE);
 
         // Recebe os dados que vieram no POST.
         $usuario = array(

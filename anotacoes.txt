@@ -4,3 +4,5 @@
     $this->output->enable_profiler(TRUE);
 3 - Para usar a sessão é preciso configurar a chave de criptografia em "config.php".
     $config['encryption_key'] = 'AquiVaiQualquerCoisaj3kljfj43jf4j3k4f';
+4 - O "set_userdata()" dura o tempo normal de uma sessão.
+5 - O "set_flashdata()" dura somente até a próxima requisição (1 requisição).
