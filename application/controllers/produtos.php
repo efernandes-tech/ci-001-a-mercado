@@ -24,7 +24,7 @@ class Produtos extends CI_Controller {
         $this->load->view("produtos/formulario");
     }
 
-    public function novo(){
+    public function novo() {
         $usuarioLogado = $this->session->userdata("usuario_logado");
 
         $produto = array(
@@ -41,6 +41,20 @@ class Produtos extends CI_Controller {
         $this->session->set_flashdata("success", "Produto salvo com sucesso.");
 
         redirect("/");
+    }
+
+    public function mostra() {
+        $id = $this->input->get("id");
+
+        $this->load->model("produtos_model");
+
+        $produto = $this->produtos_model->busca($id);
+
+        $this->load->helper("typography");
+
+        $dados = array("produto" => $produto);
+
+        $this->load->view("produtos/mostra", $dados);
     }
 
 }
