@@ -8,7 +8,7 @@ Curso I
 4 - O "set_userdata()" dura o tempo normal de uma sessão.
 5 - O "set_flashdata()" dura somente até a próxima requisição (1 requisição).
 Curso II
-6 - Todo o conteúdo cadastro pelo usuário, quando for exibido deve passar por um html escape, para evitar problemas com segurança.
+6 - TODO o conteúdo cadastro pelo usuário, quando for exibido deve passar por um html escape, para evitar problemas com segurança.
     6.1 - O Codeigniter tem um helper que auxilia esta questão:
     <?php echo html_escape("<script>alert('opa');</script>"); ?>
 7 - Rota pode receber um numero como parametro. O "(:any)" aceita qualquer caractere e tem mais na documentacao.

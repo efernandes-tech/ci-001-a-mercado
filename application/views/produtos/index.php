@@ -16,8 +16,8 @@
         <table class="table">
             <?php foreach($produtos as $produto) : ?>
                 <tr>
-                    <td><?= anchor("produtos/{$produto['id']}", $produto["nome"])?></td>
-                    <td><?= character_limiter($produto["descricao"],10)?> </td>
+                    <td><?= anchor("produtos/{$produto['id']}", html_escape($produto["nome"]))?></td>
+                    <td><?= character_limiter(html_escape($produto["descricao"]),10)?> </td>
                     <td><?= numeroEmReais($produto["preco"]) ?></td>
                 </tr>
             <?php endforeach; ?>
