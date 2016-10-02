@@ -41,6 +41,9 @@
 $route['default_controller'] = "produtos";
 $route['404_override'] = '';
 
+// Rota que recebe um numero como parametro. O "(:any)" aceita qualquer caractere e tem mais na documentacao.
+$route['produtos/(:num)'] = 'produtos/mostra/$1';
+// $route['produtos/(:num)/(:num)/(:num)'] = 'produtos/mostra/$1/$2/$3';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -8,7 +8,7 @@
         <div class="container">
             <h1><?= $produto["nome"] ?><br></h1>
             <?= $produto["preco"] ?><br>
-            <?= auto_typography($produto["descricao"]) ?><br>
+            <?= auto_typography(html_escape($produto["descricao"])) ?><br>
         </div>
     </body>
 </html>

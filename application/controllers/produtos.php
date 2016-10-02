@@ -43,13 +43,14 @@ class Produtos extends CI_Controller {
         redirect("/");
     }
 
-    public function mostra() {
-        $id = $this->input->get("id");
+    public function mostra($id) {
+        // $id = $this->input->get("id");
 
         $this->load->model("produtos_model");
 
         $produto = $this->produtos_model->busca($id);
 
+        // Usei para trocar o "\n" por "<br>" na view.
         $this->load->helper("typography");
 
         $dados = array("produto" => $produto);
