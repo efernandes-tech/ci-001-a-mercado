@@ -28,8 +28,8 @@ class Produtos extends CI_Controller {
         // Carrega a library de validacao.
         $this->load->library("form_validation");
 
-        // Define as regras de validacao.
-        $this->form_validation->set_rules("nome", "nome", "trim|required|min_length[5]");
+        // Aplica as regras de validacao do CI, e as minhas (callback_).
+        $this->form_validation->set_rules("nome", "nome", "trim|required|min_length[5]|callback_nao_tenha_a_palavra_melhor");
         $this->form_validation->set_rules("preco", "preco", "required");
         $this->form_validation->set_rules("descricao", "descricao", "trim|required|min_length[10]");
 
@@ -74,6 +74,20 @@ class Produtos extends CI_Controller {
         $dados = array("produto" => $produto);
 
         $this->load->view("produtos/mostra", $dados);
+    }
+
+    // CALLBACk para a validacao utilizar como regra.
+    public function nao_tenha_a_palavra_melhor($nome) {
+        // Retorna a posicao da palavra "melhor".
+        $posicao = strpos($nome, "melhor");
+        // Se tiver "melhor" retorna true (nao passou na validacao = tem "melhor").
+        if ($posicao !== FALSE) {
+            // Seta a mensagem de erro com o nome do campo no '%s'.
+            $this->form_validation->set_message("nao_tenha_a_palavra_melhor", "O campo '%s' não pode conter a palavra 'melhor'");
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     }
 
 }

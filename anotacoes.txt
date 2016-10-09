@@ -14,6 +14,10 @@ Curso II
 7 - Rota pode receber um numero como parametro. O "(:any)" aceita qualquer caractere e tem mais na documentacao.
     $route['produtos/(:num)'] = 'produtos/mostra/$1';
     $route['produtos/(:any)/(:any)/(:any)'] = 'produtos/mostra/$1/$2/$3';
-8 - O CI tem uma classa para validacao de formularios. Verifique:
-    application/controllers/produto/novo
-    application/views/produto/formulario
+8 - O CI tem uma classa para validacao de formularios.
+    8.1 - Verifique:
+        application/controllers/produto/novo
+        application/views/produto/formulario
+    8.2 - Vc pode criar suas proprias regras de validacao.
+9 - Traducoes das mensagens do CI para PT-BR.
+    https://github.com/CIBr/CodeIgniter-Portuguese-BR
