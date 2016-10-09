@@ -25,22 +25,40 @@ class Produtos extends CI_Controller {
     }
 
     public function novo() {
-        $usuarioLogado = $this->session->userdata("usuario_logado");
+        // Carrega a library de validacao.
+        $this->load->library("form_validation");
 
-        $produto = array(
-            "nome" => $this->input->post("nome"),
-            "descricao" => $this->input->post("descricao"),
-            "preco" => $this->input->post("preco"),
-            "usuario_id" => $usuarioLogado["id"]
-        );
+        // Define as regras de validacao.
+        $this->form_validation->set_rules("nome", "nome", "trim|required|min_length[5]");
+        $this->form_validation->set_rules("preco", "preco", "required");
+        $this->form_validation->set_rules("descricao", "descricao", "trim|required|min_length[10]");
 
-        $this->load->model("produtos_model");
+        // Mensagens de validacao sao geradas dentro de.
+        $this->form_validation->set_error_delimiters("<p class='alert alert-danger', </p>");
 
-        $this->produtos_model->salva($produto);
+        // Roda as validacao e retorna se o form e valido.
+        $sucesso = $this->form_validation->run();
 
-        $this->session->set_flashdata("success", "Produto salvo com sucesso.");
+        if ($sucesso) {
+            $usuarioLogado = $this->session->userdata("usuario_logado");
 
-        redirect("/");
+            $produto = array(
+                "nome" => $this->input->post("nome"),
+                "descricao" => $this->input->post("descricao"),
+                "preco" => $this->input->post("preco"),
+                "usuario_id" => $usuarioLogado["id"]
+            );
+
+            $this->load->model("produtos_model");
+
+            $this->produtos_model->salva($produto);
+
+            $this->session->set_flashdata("success", "Produto salvo com sucesso.");
+
+            redirect("/");
+        } else {
+            $this->load->view("produtos/formulario");
+        }
     }
 
     public function mostra($id) {
