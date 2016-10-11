@@ -2,7 +2,7 @@
 
 class UtilsController extends CI_Controller {
 
-    // Caminho: "../ci-001-a-mercado/UtilsController/migrate".
+    // Caminho: "../ci-001-a-mercado/index.php/UtilsController/migrate".
     public function migrate() {
         // Inicializa a biblioteca.
         $this->load->library("migration");

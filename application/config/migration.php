@@ -23,7 +23,7 @@ $config['migration_enabled'] = true;
 |
 */
 // Define qual versao mais atual do banco de dados.
-$config['migration_version'] = 1;
+$config['migration_version'] = 2;
 
 
 /*
