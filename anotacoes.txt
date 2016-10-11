@@ -19,5 +19,6 @@ Curso II
         application/controllers/produto/novo
         application/views/produto/formulario
     8.2 - Vc pode criar suas proprias regras de validacao.
-9 - Traducoes das mensagens do CI para PT-BR.
+9 - Traducoes das mensagens do CI para PT-BR (depende da vs do ci).
     https://github.com/CIBr/CodeIgniter-Portuguese-BR
+    http://www.ferreiramauricio.com/traducao-pt-br-codeigniter-2-1-3-e-2-1-4
