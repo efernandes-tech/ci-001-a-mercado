@@ -22,3 +22,4 @@ Curso II
 9 - Traducoes das mensagens do CI para PT-BR (depende da vs do ci).
     https://github.com/CIBr/CodeIgniter-Portuguese-BR
     http://www.ferreiramauricio.com/traducao-pt-br-codeigniter-2-1-3-e-2-1-4
+10 - As Migrations fazem o versionamento do banco de dados.
