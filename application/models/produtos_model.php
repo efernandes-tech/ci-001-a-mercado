@@ -19,4 +19,19 @@ class Produtos_model extends CI_Model {
             ->row_array();
     }
 
+    public function buscaVendidos($usuario) {
+        $id = $usuario["id"];
+
+        $this->db->select("produtos.*, vendas.data_de_entrega");
+
+        $this->db->from("produtos");
+
+        $this->db->join("vendas", "vendas.produto_id = produtos.id");
+
+        $this->db->where("vendido", true);
+        $this->db->where("usuario_id", $id);
+
+        return $this->db->get()->result_array();
+    }
+
 }

@@ -22,4 +22,17 @@ class Vendas extends CI_Controller {
 
         redirect("/");
     }
+
+    public function index() {
+        $usuario = $this->session->userdata("usuario_logado");
+
+        $this->load->model("produtos_model");
+
+        $produtosVendidos = $this->produtos_model->buscaVendidos($usuario);
+
+        $dados = array("produtosVendidos" => $produtosVendidos);
+
+        $this->load->view("vendas/index", $dados);
+    }
+
 }
