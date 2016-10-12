@@ -21,10 +21,14 @@ class Produtos extends CI_Controller {
     }
 
     public function formulario() {
+        autoriza();
+
         $this->load->view("produtos/formulario");
     }
 
     public function novo() {
+        $usuarioLogado = autoriza();
+
         // Carrega a library de validacao.
         $this->load->library("form_validation");
 
@@ -40,8 +44,6 @@ class Produtos extends CI_Controller {
         $sucesso = $this->form_validation->run();
 
         if ($sucesso) {
-            $usuarioLogado = $this->session->userdata("usuario_logado");
-
             $produto = array(
                 "nome" => $this->input->post("nome"),
                 "descricao" => $this->input->post("descricao"),

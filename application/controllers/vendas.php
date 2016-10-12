@@ -3,10 +3,10 @@
 class Vendas extends CI_Controller {
 
     public function nova() {
+        $usuario = autoriza();
+
         // Carrega a model.
         $this->load->model(array("vendas_model"));
-
-        $usuario = $this->session->userdata("usuario_logado");
 
         $this->load->helper(array("date"));
 
@@ -24,7 +24,7 @@ class Vendas extends CI_Controller {
     }
 
     public function index() {
-        $usuario = $this->session->userdata("usuario_logado");
+        $usuario = autoriza();
 
         $this->load->model("produtos_model");
 
