@@ -3,6 +3,8 @@
 class Produtos_model extends CI_Model {
 
     public function buscaTodos() {
+        // Não retorna os ja vendidos.
+        $this->db->where("vendido", false);
         // Retorna um array com todos os dados da tabela "produtos".
         return $this->db->get("produtos")->result_array();
     }
