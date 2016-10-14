@@ -26,3 +26,4 @@ Curso II
     10.1 - O arquivo "config/migration.php" define qual versao mais atual do banco de dados.
         $config['migration_version'] = 2;
     10.2 - Cuidado ao remover colunas, pq os dados são perdidos.
+11 - Para alterar/extender classe do CI, coloqueas dentro de "application/core".

@@ -1,3 +1,1 @@
-<html>
-    Cadastrado com sucesso!
-</html>
+<h1>Cadastrado com sucesso!</h1>

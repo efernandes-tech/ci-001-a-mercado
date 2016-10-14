@@ -1,10 +1,3 @@
-<html>
-<head>
-    <link rel="stylesheet" href="<?= base_url("css/bootstrap.css") ?>">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-<body>
-    <div class="container">
         <h1>Minhas vendas</h1>
         <table class="table">
         <?php foreach($produtosVendidos as $produto) : ?>
@@ -14,6 +7,3 @@
             </tr>
         <?php endforeach ?>
         </table>
-    </div>
-</body>
-</html>

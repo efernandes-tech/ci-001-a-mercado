@@ -17,13 +17,15 @@ class Produtos extends CI_Controller {
         // Carrega os ajudantes para este controller.
         $this->load->helper(array("currency"));
 
-        $this->load->view("produtos/index.php", $dados);
+        // $this->load->view("produtos/index.php", $dados);
+        $this->load->template("produtos/index.php", $dados);
     }
 
     public function formulario() {
         autoriza();
 
-        $this->load->view("produtos/formulario");
+        // $this->load->view("produtos/formulario");
+        $this->load->template("produtos/formulario");
     }
 
     public function novo() {
@@ -59,7 +61,8 @@ class Produtos extends CI_Controller {
 
             redirect("/");
         } else {
-            $this->load->view("produtos/formulario");
+            // $this->load->view("produtos/formulario");
+            $this->load->template("produtos/formulario");
         }
     }
 
@@ -75,7 +78,8 @@ class Produtos extends CI_Controller {
 
         $dados = array("produto" => $produto);
 
-        $this->load->view("produtos/mostra", $dados);
+        // $this->load->view("produtos/mostra", $dados);
+        $this->load->template("produtos/mostra", $dados);
     }
 
     // CALLBACk para a validacao utilizar como regra.
